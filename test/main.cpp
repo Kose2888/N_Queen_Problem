@@ -18,10 +18,18 @@ class Test : public testing::Test {
 };
 
 TEST_F(Test, boardContructorTest) {
-  Board b(4,4);
+  int rows = 5;
+  int cols = 5;
+  Board b(rows,cols);
 
-  b.getElement()[1] = 1;
-  b.getElement()[6] = 1;
-  b.getElement()[15] = 1;
+  b.display();
+
+  for(int i = 0; i < rows; i++) {
+    for(int j = 0; j < cols; j++) {
+      b.setElement(i,j,1);
+      EXPECT_EQ(b.getElement(i,j), 1);
+    }
+  }
+
   b.display();
 }

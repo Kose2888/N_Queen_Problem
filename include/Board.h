@@ -19,7 +19,10 @@ class Board {
 
     void display();
 
-    int* getElement();
+    void setElement(int r, int c, int n);
+
+    int getElement(int r, int c) const;
+
 
 };
 
