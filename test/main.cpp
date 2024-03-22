@@ -18,6 +18,10 @@ class Test : public testing::Test {
 };
 
 TEST_F(Test, boardContructorTest) {
-  Board b;
+  Board b(4,4);
 
+  b.getElement()[1] = 1;
+  b.getElement()[6] = 1;
+  b.getElement()[15] = 1;
+  b.display();
 }
