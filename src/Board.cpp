@@ -49,7 +49,7 @@ void Board::display() {
 }
 
 void Board::setElement(int r, int c, int n) {
-  if(r <= rows && c <= cols && r >= 0 && c >= 0 && n == 1)
+  if(r <= rows && c <= cols && r >= 0 && c >= 0 && (n == 1 || n == 0))
     element[rows*r + c] = n;
   else
     std::cout << "Error: Invalid set, not within board" << std::endl;
