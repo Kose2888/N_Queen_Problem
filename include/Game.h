@@ -18,6 +18,11 @@ class Game {
     Board* getBoard() {return b;}
 
     bool isSafe(int r, int c);
+
+    // Backtracking algorithm
+    bool solveNQueen(int c);
+
+    void startGame();
 };
 
 

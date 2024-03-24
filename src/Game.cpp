@@ -32,3 +32,29 @@ bool Game::isSafe(int r, int c) {
 
   return true;
 }
+
+bool Game::solveNQueen(int c) {
+  //base case: true if all queens are placed
+  if(c >= input)
+    return true;
+
+  for(int i = 0; i < input; i++) {
+    if(isSafe(i, c)) {
+      b->setElement(i,c,1);
+
+      if(solveNQueen(c + 1))
+        return true;
+
+      // Backtrack
+      b->setElement(i,c,0);
+    }
+  }
+  return false;
+}
+
+void Game::startGame() {
+  if(solveNQueen(0) == false) {
+    std::cout << "Solution does not exist" << std::endl;
+  }
+  b->display();
+}

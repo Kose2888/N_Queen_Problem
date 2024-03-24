@@ -18,7 +18,7 @@ Board::~Board() {
 
 void Board::display() {
   std::cout << "  ";
-  for(int i = 0; i < (cols); i++) {
+  for(int i = 1; i < (cols)+1; i++) {
     std::cout << std::setfill(' ');
     std::cout << std::right << std::setw(3);
     std::cout << i;
@@ -26,7 +26,7 @@ void Board::display() {
   std::cout << "\n  " <<
     std::setfill('-') << std::right << std::setw(cols*3+1);
 
-  int j = 0;
+  int j = 1;
   for(int i = 0; i < (rows * cols); i++) {
     if((i % cols) == 0) {
       if(j >= 10)

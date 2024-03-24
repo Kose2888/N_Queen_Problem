@@ -82,3 +82,28 @@ TEST_F(Test, gameIsSafe) {
   g->getBoard()->display();
   delete g;
 }
+
+TEST_F(Test, gameSolveNQueen) {
+  int input = 4;
+  Game *g = new Game(input);
+
+  g->solveNQueen(0);
+  g->getBoard()->display();
+
+
+  delete g;
+}
+/*
+TEST_F(Test, gameStartGame) {
+  int input = 0;
+
+  std::cout << "Enter a number: ";
+  std::cin >> input;
+
+  Game *g = new Game(input);
+
+  g->startGame();
+
+  delete g;
+}
+*/
